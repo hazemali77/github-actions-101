@@ -16,7 +16,7 @@ spec:
         - name: devops101registry-credentials
       containers:
         - name: notes-api
-          image: devops101registry.azurecr.io/18-10-22-notes-api:v0
+          image: devops101registry.azurecr.io/n23524-notes-api:v0
           imagePullPolicy: Always
           ports:
             - containerPort: 80
