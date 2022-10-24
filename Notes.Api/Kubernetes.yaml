@@ -15,7 +15,7 @@ spec:
       imagePullSecrets:
         - name: devops101registry-credentials
       containers:
-        - name: notes-api
+        - name: n23524-notes-api
           image: devops101registry.azurecr.io/n23524-notes-api:v0
           imagePullPolicy: Always
           ports:
