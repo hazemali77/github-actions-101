@@ -1,22 +1,22 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: 18-10-22-notes-api
+  name: n23524-notes-api
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: 18-10-22-notes-api
+      app: n23524-notes-api
   template:
     metadata:
       labels:
-        app: 18-10-22-notes-api
+        app: n23524-notes-api
     spec:
       imagePullSecrets:
         - name: devops101registry-credentials
       containers:
         - name: notes-api
-          image: devops101registry.azurecr.io/18-10-22-notes-api:v0
+          image: devops101registry.azurecr.io/n23524-notes-api:v0
           imagePullPolicy: Always
           ports:
             - containerPort: 80
@@ -24,11 +24,11 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: n18-10-22-notes-api
+  name: n23524-notes-api
 spec:
   type: LoadBalancer
   selector:
-    app: n18-10-22-notes-api
+    app: n23524-notes-api
   ports:
     - protocol: TCP
       port: 80
