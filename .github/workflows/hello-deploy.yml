@@ -2,6 +2,7 @@ name: "Hello Deploy"
 
 on:
   workflow_dispatch:
+  push:
 
 jobs:
   build:
@@ -27,7 +28,7 @@ jobs:
           file: ./Notes.Api/Dockerfile
           push: true
           tags: devops101registry.azurecr.io/notes-api:v${{ github.run_number }}
-g  build-test:
+  build-test:
     runs-on: ubuntu-latest
     needs: build
 
@@ -41,7 +42,6 @@ g  build-test:
 
       - name: "Print .NET CLI version"
         run: dotnet --version        
-
   deploy:
     runs-on: ubuntu-latest
     needs: build
